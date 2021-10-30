@@ -1,0 +1,90 @@
+% !TEX TS-program = XeLaTeX
+% !TeX root=main.tex
+\makeatletter
+\begin{tabular}{| p{8mm} | p{40mm} | p{.25\textwidth} | p{.12\textwidth}| p{.15\textwidth}| p{.3\textwidth}|}
+\hline
+\rotatebox{45}{ردیف}
+ &  نام و نام خانوادگی &سمت &	مرتبه علمی & محل کار &	امضـــــــــــــا\\
+\hline
+\stepcounter{radif}
+\arabic{radif}  &	\@firstsupervisor{}  &  استاد راهنما &
+ استادیار & 
+\pbox{20mm}{دانشگاه  \\حکیم سبزواری}
+& \\%
+[15pt]
+\hline
+\ifx\@secondsupervisor\undefined%
+\else
+        \stepcounter{radif}
+	\arabic{radif}  &	\@secondsupervisor{}  &  استاد راهنما & 
+ استادیار & 
+	\pbox{20mm}{دانشگاه  \\حکیم سبزواری}	
+	 & \\%
+	[15pt]
+	\hline
+\fi
+% استادان مشاور
+\ifx\@firstadvisor\undefined%
+\else
+	\stepcounter{radif}
+	\arabic{radif}  &	\@firstadvisor{}  &  استاد مشاور & 
+ استادیار & 
+	\pbox{20mm}{دانشگاه  \\حکیم سبزواری}	
+	& \\%
+	[15pt]
+	\hline
+\fi	
+\ifx\@secondadvisor\undefined%
+\else
+	\stepcounter{radif}
+	\arabic{radif}  &	\@secondadvisor{}  &  استاد مشاور & 
+ استادیار & 
+	\pbox{20mm}{دانشگاه  \\حکیم سبزواری}		
+	&\\%
+	[15pt]
+	\hline
+\fi
+% استادان داور
+\ifx\@firstReviewer\undefined%
+\else
+	\stepcounter{radif}
+	\arabic{radif}  &	\@firstReviewer{}  &  استاد داور & 
+ استادیار & 
+	\pbox{20mm}{دانشگاه  \\حکیم سبزواری}	
+	& \\%
+	[15pt]
+	\hline
+\fi	
+\ifx\@secondReviewer\undefined%
+\else
+	\stepcounter{radif}
+	\arabic{radif}  &	\@secondReviewer{}  &  استاد داور & 
+ استادیار & 
+	\pbox{20mm}{دانشگاه  \\حکیم سبزواری}		
+      & \\%
+	[15pt]
+	\hline
+\fi
+\ifx\@thirdReviewer\undefined%
+\else
+	\stepcounter{radif}
+	\arabic{radif}  &	\@thirdReviewer{}  &  استاد داور & 
+ استادیار & 
+	\pbox{20mm}{دانشگاه  \\حکیم سبزواری}		
+	& \\%
+	[15pt]
+	\hline
+\fi
+% نماینده تحصیلات تکمیلی
+\ifx\@representative\undefined%
+\else
+	\stepcounter{radif}
+	\arabic{radif}  &	\@representative{}  &   نماینده تحصیلات تکمیلی & 
+ استادیار & 
+	\pbox{20mm}{دانشگاه  \\حکیم سبزواری}		
+	  &\\%
+	[15pt]
+\fi
+\hline
+\end{tabular}
+\makeatother

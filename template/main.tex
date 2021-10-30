@@ -1,0 +1,56 @@
+% !TEX TS-program = XeLaTeX
+% Commands for running this example:
+% 	 xelatex main
+% 	 bibtex   main
+%    xindy -L persian-variant1 -C utf8 -M texindy main.idx
+% 	 xelatex main
+% 	 xelatex main
+% End of Commands
+
+%        نمونه پایان‌نامه آماده شده با استفاده از کلاس HSU-Thesis، برای پایان‌نامه‌های دانشگاه حکیم سبزواری
+% 		محمود امین‌طوسی، دانشگاه حکیم سبزواری، http://profs.hsu.ac.ir/mamintoosi/
+% 		گروه پارسی‌لاتک  http://www.parsilatex.com
+
+%----------------------------------------------------------------------------------------------
+\RequirePackage[final]{graphicx}
+%        اگر مایلید پایان‌نامه شما دورو باشد به جای oneside  در خط زیر از twoside استفاده کنید
+%        اگر قصد نوشتن پروژه کارشناسی را دارید، در خط زیر به جای msc، کلمه bsc و اگر قصد نوشتن پروژه دکترا
+%        را دارید، کلمه phd را قرار دهید. کلیه تنظیمات لازم، به طور خودکار، اعمال می‌شود.
+% 		و اگر مایلید نسخه پیش نویس را داشته باشید draft را به گزینه ها اضافه کنید.
+\documentclass[oneside,openany,dvipsnames,msc,12pt]{HSU-Thesis} %,draft
+
+% مشخصات پایان‌نامه را در فایلهای faTitle و enTitle وارد نمایید.
+
+%       فایل commands.tex را مطالعه کنید؛ چون دستورات مربوط به فراخوانی بسته زی‌پرشین 
+%       و دیگر بسته‌ها و ... در این فایل قرار دارد و بهتر است که با نحوه استفاده از آنها آشنا شوید.
+\input{commands}
+
+\begin{document}
+
+\input{faTitle}
+\setRTLparagraphfootnotes
+\include{preface}			% پیشگفتار
+\setLTRparagraphfootnotes
+\include{chapter1}		% فصل اول: مقدمه
+\include{chapter2}		% فصل دوم: آشنایی مقدماتی با لاتک
+
+% مراجع
+{
+\onehalfspacing
+\bibliographystyle{unsrt-fa}
+\bibliography{MyReferences}
+}
+
+% عدم نمایش بخشها و زیربخشهای پیوستها در فهرست مطالب
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\appendix                           %فصلهای پس از این قسمت به عنوان ضمیمه خواهند آمد.
+% پیوست اول: مدیریت مراجع در لاتک، درج نمودار، تصویر، جدول و ...
+\include{appendix1}		
+
+\include{dicfa2en}
+\include{dicen2fa}
+
+\printindex
+\input{enTitle}
+
+\end{document}
