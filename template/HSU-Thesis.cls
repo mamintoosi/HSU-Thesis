@@ -5,10 +5,11 @@
 %%	by: Mahmood Amintoosi, m.amintoosi@gmail.com
 %%  		http://profs.hsu.ac.ir/mamintoosi
 %%  		http://www.parsilatex.com
-%%	Ver 1.5, August 2016
+%%	Ver 1.6, Jan 2022
 %%   ____________________________________________________________________
 
 %        تغییرات:
+% نسخه ۱.۶: انتقال لوگوی دانشگاه در صفحه چکیده لاتین به سمت چپ
 % نسخه ۱.۵: اضافه کردن امکان ثبت پایان‌نامه بدون گرایش
 % نسخه ۱.۴: اضافه کردن بسم الله الرحمن الرحیم به صفحه اول، پایینتر بردن محتویات صفحه آخر به خاطر همترازی با صفحه اول، اصلاح مشکل عدم درج فهرست الگوریتم ها، جابجایی صفحات فهرست جداول و فهرست تصاویر
 % نسخه ۱.۲۳: اجرای نمایه
@@ -606,7 +607,9 @@ $\Box$ بهره برداری از این پایان‌نامه تا تاریخ .
 \begin{center}
 \begin{tabularx}{1.05\textwidth}{||X|X|X||}
 \hhline{|t:==t:=:t|}
-\multicolumn{2}{||c}{
+\multicolumn{1}{||l}{\pbox{10cm}{\vspace{2mm}\includegraphics[width=.15\textwidth]{logo}}\hfill}
+&
+\multicolumn{2}{c||}{
 \begin{tabular}[x]{@{}c@{}}\large Hakim Sabzevari University \\
 An Outline of 
 \if@bscthesis
@@ -620,8 +623,7 @@ An Outline of
 	 Thesis
 \fi 
 \end{tabular}
-}&
-\multicolumn{1}{l||}{\hfill\pbox{10cm}{\vspace{2mm}\includegraphics[width=.15\textwidth]{logo}}}
+}
    \\
 \hhline{|:==|=:|}
 Surname:\@latinsurname &
